@@ -2,6 +2,21 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "CP: Watch mode (auto-run on save)",
+            "type": "shell",
+            "command": "python watch_cp.py \"${file}\"",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": false
+            },
+            "problemMatcher": [],
+            "detail": "Start CP watch mode and auto-run when current file/inputs.txt/expected.txt changes."
+        },
+        {
             "label": "Python: Run with input/output files",
             "type": "shell",
             "command": "cmd",
