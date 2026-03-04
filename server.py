@@ -2,7 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-
+from keep_alive import keep_alive
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -36,6 +36,9 @@ async def testjoin(ctx):
 
 
 if TOKEN:
+    # Start the background web server
+    keep_alive()
+    # Start the Discord bot
     bot.run(TOKEN)
 else:
     print("Error: No token found. Check .env file!")
